@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>СмартОценка — платформа для честных конкурсов</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/screens.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Главный экран (1) -->
+        <section class="screen screen-main" id="screen-main">
+            <header class="main-header" id="mainHeader">
+                <div class="logo">СмартОценка</div>
+                <div class="header-right">
+                    <div class="lang-switch" id="langSwitch">
+                        <div class="lang-bg"></div>
+                        <button class="lang-option active" data-lang="ru">RU</button>
+                        <button class="lang-option" data-lang="en">EN</button>
+                    </div>
+                    <button class="header-control-btn" id="headerControlBtn" aria-label="Меню">
+                        <svg class="icon-menu" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <circle cx="8" cy="8" r="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                            <circle cx="16" cy="8" r="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                            <circle cx="8" cy="16" r="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                            <circle cx="16" cy="16" r="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                        </svg>
+                        <svg class="icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" style="display: none;">
+                            <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Меню-попап (для всех разрешений) -->
+            <div class="nav-popup" id="navPopup">
+                <button class="popup-nav-btn" data-target="main">Главная</button>
+                <button class="popup-nav-btn" data-target="about">О нас</button>
+                <button class="popup-nav-btn" data-target="product">Продукт</button>
+                <button class="popup-nav-btn" data-target="reviews">Отзывы</button>
+                <button class="popup-nav-btn" data-target="links">Ссылки</button>
+                <button class="popup-nav-btn" data-target="download">Скачать</button>
+            </div>
+
+            <div class="screen-content">
+                <div class="main-content">
+                    <div class="main-container">
+                        <div class="central-card">
+                            <div class="central-title">СмартОценка</div>
+                        </div>
+                        <div class="subtitle-outside">Прими взвешенное решение</div>
+                    </div>
+                </div>
+                
+                <div class="bottom-actions">
+                    <div class="app-link-wrapper">
+                        <div class="app-link">
+                            <span data-i18n="go_to_app">Перейти в приложение</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"/></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scroll-arrow-area">
+                    <svg class="arrow-down" width="32" height="32" viewBox="0 0 24 24">
+                        <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" fill="none" stroke-width="2"/>
+                    </svg>
+                    <span class="arrow-label" data-i18n="about_label">О нас</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2 экран: О нас -->
+        <section class="screen screen-about" id="screen-about">
+            <div class="screen-content">
+                <div class="about-blocks">
+                    <div class="about-block stat-card">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label" data-i18n="years">года</div>
+                        <div class="stat-description" data-i18n="uptime_text">без единой технической накладки во время конкурсов</div>
+                    </div>
+                    
+                    <div class="about-block text-card">
+                        <p data-i18n="about_text1">Мы — команда бывших методистов и IT-архитекторов, которая перевела бюрократию оценивания в чистую математику. Нам доверяют конкурсы, где цена ошибки — публичный скандал и отказ спонсоров.</p>
+                    </div>
+                    
+                    <div class="about-block stat-card">
+                        <div class="stat-number">1 240</div>
+                        <div class="stat-label" data-i18n="events_count">мероприятий</div>
+                        <div class="stat-description" data-i18n="events_label">провели через нашу систему</div>
+                    </div>
+                    
+                    <div class="about-block text-card">
+                        <p data-i18n="about_text2">Итоги не сформируются, пока последний эксперт не оценит последнего участника. Никаких «ой, а я этого пропустил» или «забыли посмотреть третьего выступающего». Система просто не даст вам ошибиться.</p>
+                    </div>
+                    
+                    <div class="about-block stat-card">
+                        <div class="stat-number">96%</div>
+                        <div class="stat-label" data-i18n="organizers">организаторов</div>
+                        <div class="stat-description" data-i18n="time_label">сократили время подведения итогов до 15 минут</div>
+                    </div>
+                    
+                    <div class="about-block text-card">
+                        <p data-i18n="about_text3">Мы не просто считаем баллы — мы даём прозрачность. Каждый эксперт видит веса критериев, каждый организатор получает историю изменений. К нам возвращаются, потому что мы спасаем от стресса и конфликтов.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-arrow-area">
+                <svg width="32" height="32" viewBox="0 0 24 24">
+                    <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span class="arrow-label" data-i18n="product_label">Продукт</span>
+            </div>
+        </section>
+
+        <!-- 3 экран: Продукт -->
+        <section class="screen screen-product" id="screen-product">
+            <div class="screen-content">
+                <div class="product-container">
+                    <div class="tariff-block">
+                        <h3 data-i18n="tariff">Тариф</h3>
+                        <div class="tariff-switch">
+                            <button class="tariff-option active" data-plan="usual">Обычный</button>
+                            <button class="tariff-option" data-plan="pro">PRO</button>
+                        </div>
+                        <div class="price" id="priceDisplay">бесплатный</div>
+                    </div>
+                    <div class="features-list" id="featuresList">
+                        <h3>СмартОценка</h3>
+                        <ul>
+                            <li data-i18n="feature1">Личный кабинет организатора и жюри</li>
+                            <li data-i18n="feature2">Конструктор конкурса и загрузка участников из Excel</li>
+                            <li data-i18n="feature3">Подведение итогов после финальной оценки</li>
+                            <li data-i18n="feature4">Автоматический расчёт и оформленные результаты</li>
+                            <li data-i18n="feature5">И многое другое: от шаблонов до архива результатов</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-arrow-area">
+                <svg width="32" height="32" viewBox="0 0 24 24">
+                    <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span class="arrow-label" data-i18n="reviews_label">Отзывы</span>
+            </div>
+        </section>
+
+        <!-- 4 экран: Отзывы -->
+        <section class="screen screen-reviews" id="screen-reviews">
+            <div class="screen-content">
+                <div class="reviews-container">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="review-name">Анастасия</span>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                        <div class="review-sub">Руководитель методического отдела, конкурс «Инновации регионов», г. Нижний Новгород</div>
+                        <p data-i18n="review1">В прошлом году мы три дня перепроверяли таблицы от 12 экспертов. Сейчас со «СмартОценкой» итоги готовы через минуту после последней оценки. Жюри заходят с телефонов, система не даёт никому забыть ни одного участника. Спонсоры больше не спрашивают «а точно ли не ошиблись?» — просто смотрят протокол и переводят призы</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="review-name">Дмитрий</span>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                        <div class="review-sub">Организатор международного фестиваля «Звёзды Поволжья», г. Казань</div>
+                        <p data-i18n="review2">Нам важно было, чтобы эксперты-бизнесмены не путались в интерфейсе. И теперь переход к оцениванию занимает три клика даже для 60-летнего инвестора. Плюс система подсветила, что один эксперт поставил 100 баллов по незначимому критерию — мы скорректировали это за минуту. Без СмартОценки заметили бы только через неделю</p>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="review-name">Екатерина</span>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                        <div class="review-sub">Методист, конкурс «Современный урок – 2025», г. Воронеж</div>
+                        <p data-i18n="review3">Наша боль — потерянные бумажные протоколы и конфликты с жюри: «а я так не оценивал». В СмартОценке всё подписано временной меткой и экспертной подписью. Архив за три года открывается в два клика. И главное — не надо никого учить</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-arrow-area">
+                <svg width="32" height="32" viewBox="0 0 24 24">
+                    <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span class="arrow-label">Ссылки</span>
+            </div>
+        </section>
+
+        <!-- 5 экран: Ссылки -->
+        <section class="screen screen-links" id="screen-links">
+            <div class="screen-content">
+                <div class="links-layout">
+                    <div class="form-block">
+                        <h3 data-i18n="questions_title">Остались вопросы?</h3>
+                        <input type="text" placeholder="Ваше имя" data-i18n-placeholder="name_placeholder">
+                        <textarea placeholder="Опишите ваш вопрос..." data-i18n-placeholder="question_placeholder" rows="4"></textarea>
+                        <input type="email" placeholder="Адрес электронной почты" data-i18n-placeholder="email_placeholder">
+                        <button data-i18n="send_btn">Отправить</button>
+                    </div>
+                    <div class="social-links">
+                        <div class="social-item">
+                            <div class="social-placeholder"></div>
+                            <span>Telegram</span>
+                        </div>
+                        <div class="social-item">
+                            <div class="social-placeholder"></div>
+                            <span>VK</span>
+                        </div>
+                        <div class="social-item">
+                            <div class="social-placeholder"></div>
+                            <span>YouTube</span>
+                        </div>
+                        <div class="social-item">
+                            <div class="social-placeholder"></div>
+                            <span>Dzen</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-arrow-area">
+                <svg width="32" height="32" viewBox="0 0 24 24">
+                    <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span class="arrow-label" data-i18n="download_label">Скачать</span>
+            </div>
+        </section>
+
+        <!-- 6 экран: Скачать -->
+        <section class="screen screen-download" id="screen-download">
+            <div class="screen-content">
+                <div class="download-container">
+                    <div class="download-central-card">СмартОценка</div>
+                    <div class="download-button-card">Перейти в приложение</div>
+                </div>
+            </div>
+            
+            <!-- Стрелка назад (вверх) -->
+            <div class="scroll-arrow-back-area">
+                <svg width="32" height="32" viewBox="0 0 24 24">
+                    <path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span class="arrow-label">Назад</span>
+            </div>
+            
+            <footer class="footer">
+                <div class="footer-logo">СмартОценка</div>
+                <div class="footer-nav">
+                    <a href="#" data-target="main">Главная</a>
+                    <a href="#" data-target="about">О нас</a>
+                    <a href="#" data-target="product">Продукт</a>
+                    <a href="#" data-target="reviews">Отзывы</a>
+                    <a href="#" data-target="links">Ссылки</a>
+                </div>
+                <div class="footer-copy">© 2026 СмартОценка</div>
+            </footer>
+        </section>
+    </div>
+    
+    <script src="scripts/localization.js"></script>
+    <script src="scripts/navigation.js"></script>
+    <script src="scripts/tariff.js"></script>
+    <script src="scripts/animations.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

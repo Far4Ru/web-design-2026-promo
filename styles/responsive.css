@@ -1,0 +1,371 @@
+/* Laptop 1440/1366 */
+@media (max-width: 1439px) {
+    .screen {
+        padding: 100px 100px 90px;
+    }
+    
+    .main-header {
+        left: 100px;
+        right: 100px;
+    }
+    
+    .nav-popup {
+        right: 100px;
+    }
+    
+    .central-title {
+        font-size: 56px;
+    }
+    
+    .central-card {
+        padding: 40px 80px;
+    }
+}
+
+/* Tablet horizontal 1194 */
+@media (max-width: 1194px) {
+    .screen {
+        padding: 90px 60px 80px;
+    }
+    
+    .main-header {
+        left: 60px;
+        right: 60px;
+        padding: 8px 18px;
+    }
+    
+    .nav-popup {
+        right: 60px;
+    }
+    
+    .nav-btn {
+        padding: 4px 6px;
+        font-size: 10px;
+    }
+    
+    .central-title {
+        font-size: 48px;
+    }
+    
+    .central-card {
+        padding: 35px 70px;
+    }
+    
+    .about-blocks {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .product-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tariff-block {
+        width: 100%;
+        max-width: 380px;
+    }
+    
+    .reviews-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .stat-number {
+        font-size: 54px;
+    }
+    
+    .footer {
+        flex-wrap: wrap;
+        gap: 16px;
+        justify-content: center;
+    }
+}
+
+/* Tablet vertical 834 */
+@media (max-width: 834px) {
+    .screen {
+        padding: 80px 40px 80px;
+    }
+    
+    .main-header {
+        left: 40px;
+        right: 40px;
+        top: 20px;
+        padding: 8px 16px;
+    }
+    
+    .nav-popup {
+        right: 40px;
+        left: 40px;
+        min-width: auto;
+    }
+
+    .popup-nav-btn {
+        text-align: center;
+    }
+    
+    .reviews-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .links-layout {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .social-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .download-central-card {
+        padding: 30px 50px;
+        font-size: 32px;
+    }
+    
+    .download-button-card {
+        padding: 14px 32px;
+        font-size: 18px;
+    }
+    
+    .about-blocks {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .central-title {
+        font-size: 40px;
+    }
+    
+    .central-card {
+        padding: 30px 50px;
+    }
+    
+    .stat-number {
+        font-size: 48px;
+    }
+    
+    .footer {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+    
+    .footer-nav {
+        gap: 14px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .scroll-arrow-back-area {
+        bottom: 160px;
+    }
+}
+
+/* Mobile 375 */
+@media (max-width: 767px) {
+    .screen {
+        padding: 70px 20px 70px;
+    }
+    
+    .main-header {
+        left: 16px;
+        right: 16px;
+        top: 16px;
+        padding: 6px 14px;
+    }
+    
+    .nav-popup {
+        right: 16px;
+        left: 16px;
+    }
+    
+    .logo {
+        font-size: 16px;
+    }
+    
+    .lang-option {
+        padding: 5px 12px;
+        font-size: 11px;
+    }
+    
+    .header-control-btn {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .header-right {
+        gap: 8px;
+    }
+    
+    .central-card {
+        padding: 20px 30px;
+    }
+    
+    .central-title {
+        font-size: 28px;
+    }
+    
+    .subtitle-outside {
+        font-size: 14px;
+        margin-top: 12px;
+    }
+    
+    .app-link {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+    
+    .stat-number {
+        font-size: 40px;
+    }
+    
+    .stat-label {
+        font-size: 16px;
+    }
+    
+    .stat-description {
+        font-size: 12px;
+        max-width: 180px;
+    }
+    
+    .tariff-block {
+        padding: 24px;
+    }
+    
+    .tariff-option {
+        padding: 6px 16px;
+        font-size: 12px;
+    }
+    
+    .price {
+        font-size: 20px;
+    }
+    
+    .features-list {
+        padding: 24px;
+    }
+    
+    .features-list h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .features-list li {
+        font-size: 13px;
+        margin: 12px 0;
+    }
+    
+    .review-card {
+        padding: 20px;
+    }
+    
+    .review-name {
+        font-size: 16px;
+    }
+    
+    .stars {
+        font-size: 14px;
+    }
+    
+    .review-sub {
+        font-size: 11px;
+    }
+    
+    .review-card p {
+        font-size: 13px;
+    }
+    
+    .form-block {
+        padding: 24px;
+    }
+    
+    .form-block h3 {
+        font-size: 22px;
+    }
+    
+    .form-block input,
+    .form-block textarea {
+        padding: 10px 14px;
+        font-size: 13px;
+    }
+    
+    .social-item {
+        padding: 8px 14px;
+    }
+    
+    .social-placeholder {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .social-item span {
+        font-size: 13px;
+    }
+    
+    .download-central-card {
+        padding: 20px 40px;
+        font-size: 24px;
+    }
+    
+    .download-button-card {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+    
+    .footer-nav a {
+        font-size: 11px;
+    }
+    
+    .footer-copy {
+        font-size: 11px;
+    }
+    
+    .about-block {
+        padding: 20px;
+    }
+    
+    .text-card p {
+        font-size: 13px;
+    }
+    
+    .scroll-arrow-area {
+        bottom: 20px;
+    }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 480px) {
+    .main-header {
+        flex-wrap: wrap;
+        gap: 8px;
+        border-radius: 30px;
+        justify-content: center;
+    }
+    
+    .logo {
+        order: 0;
+    }
+    
+    .lang-switch {
+        order: 1;
+    }
+    
+    .header-control-btn {
+        order: 2;
+    }
+    
+    .central-card {
+        padding: 16px 24px;
+    }
+    
+    .central-title {
+        font-size: 24px;
+    }
+    
+    .stat-number {
+        font-size: 36px;
+    }
+}
