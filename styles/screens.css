@@ -330,6 +330,13 @@
 /* Экран Скачать */
 .screen-download .screen-content {
     justify-content: center;
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.screen-download .download-button-card {
+    pointer-events: auto;
 }
 
 .download-container {

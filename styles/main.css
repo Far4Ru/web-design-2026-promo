@@ -19,6 +19,8 @@ body {
     scroll-behavior: smooth;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    position: relative;
+    z-index: 1;
 }
 
 .app::-webkit-scrollbar {
@@ -194,6 +196,19 @@ body {
 
 .popup-nav-btn:hover {
     background: rgba(255, 255, 255, 0.08);
+}
+
+.popup-nav-btn[data-target="download"] {
+    background: #fff;
+    color: #000;
+    font-weight: 600;
+    border-radius: 50px;
+}
+
+.popup-nav-btn[data-target="download"]:hover {
+    background: #fff;
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
 }
 
 /* Стрелки */
