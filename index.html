@@ -39,12 +39,12 @@
 
             <!-- Меню-попап (для всех разрешений) -->
             <div class="nav-popup" id="navPopup">
-                <button class="popup-nav-btn" data-target="main">Главная</button>
-                <button class="popup-nav-btn" data-target="about">О нас</button>
-                <button class="popup-nav-btn" data-target="product">Продукт</button>
-                <button class="popup-nav-btn" data-target="reviews">Отзывы</button>
-                <button class="popup-nav-btn" data-target="links">Ссылки</button>
-                <button class="popup-nav-btn" data-target="download">Скачать</button>
+                <button class="popup-nav-btn" data-target="main" data-i18n="nav_main">Главная</button>
+                <button class="popup-nav-btn" data-target="about" data-i18n="about_label">О нас</button>
+                <button class="popup-nav-btn" data-target="product" data-i18n="product_label">Продукт</button>
+                <button class="popup-nav-btn" data-target="reviews" data-i18n="reviews_label">Отзывы</button>
+                <button class="popup-nav-btn" data-target="links" data-i18n="links_label">Ссылки</button>
+                <button class="popup-nav-btn" data-target="download" data-i18n="download_label">Скачать</button>
             </div>
 
             <div class="screen-content">
@@ -126,7 +126,7 @@
                     <div class="tariff-block">
                         <h3 data-i18n="tariff">Тариф</h3>
                         <div class="tariff-switch">
-                            <button class="tariff-option active" data-plan="usual">Обычный</button>
+                            <button class="tariff-option active" data-plan="usual" data-i18n="plan_usual">Обычный</button>
                             <button class="tariff-option" data-plan="pro">PRO</button>
                         </div>
                         <div class="price" id="priceDisplay">бесплатный</div>
@@ -134,11 +134,11 @@
                     <div class="features-list" id="featuresList">
                         <h3>СмартОценка</h3>
                         <ul>
-                            <li data-i18n="feature1">Личный кабинет организатора и жюри</li>
-                            <li data-i18n="feature2">Конструктор конкурса и загрузка участников из Excel</li>
-                            <li data-i18n="feature3">Подведение итогов после финальной оценки</li>
-                            <li data-i18n="feature4">Автоматический расчёт и оформленные результаты</li>
-                            <li data-i18n="feature5">И многое другое: от шаблонов до архива результатов</li>
+                            <li>Личный кабинет организатора и жюри</li>
+                            <li>Конструктор конкурса и загрузка участников из Excel</li>
+                            <li>Подведение итогов после финальной оценки</li>
+                            <li>Автоматический расчёт и оформленные результаты</li>
+                            <li>И многое другое: от шаблонов до архива результатов</li>
                         </ul>
                     </div>
                 </div>
@@ -158,26 +158,26 @@
                 <div class="reviews-container">
                     <div class="review-card">
                         <div class="review-header">
-                            <span class="review-name">Анастасия</span>
+                            <span class="review-name" data-i18n="review1_name">Анастасия</span>
                             <div class="stars">★★★★★</div>
                         </div>
-                        <div class="review-sub">Руководитель методического отдела, конкурс «Инновации регионов», г. Нижний Новгород</div>
+                        <div class="review-sub" data-i18n="review1_sub">Руководитель методического отдела, конкурс «Инновации регионов», г. Нижний Новгород</div>
                         <p data-i18n="review1">В прошлом году мы три дня перепроверяли таблицы от 12 экспертов. Сейчас со «СмартОценкой» итоги готовы через минуту после последней оценки. Жюри заходят с телефонов, система не даёт никому забыть ни одного участника. Спонсоры больше не спрашивают «а точно ли не ошиблись?» — просто смотрят протокол и переводят призы</p>
                     </div>
                     <div class="review-card">
                         <div class="review-header">
-                            <span class="review-name">Дмитрий</span>
+                            <span class="review-name" data-i18n="review2_name">Дмитрий</span>
                             <div class="stars">★★★★★</div>
                         </div>
-                        <div class="review-sub">Организатор международного фестиваля «Звёзды Поволжья», г. Казань</div>
+                        <div class="review-sub" data-i18n="review2_sub">Организатор международного фестиваля «Звёзды Поволжья», г. Казань</div>
                         <p data-i18n="review2">Нам важно было, чтобы эксперты-бизнесмены не путались в интерфейсе. И теперь переход к оцениванию занимает три клика даже для 60-летнего инвестора. Плюс система подсветила, что один эксперт поставил 100 баллов по незначимому критерию — мы скорректировали это за минуту. Без СмартОценки заметили бы только через неделю</p>
                     </div>
                     <div class="review-card">
                         <div class="review-header">
-                            <span class="review-name">Екатерина</span>
+                            <span class="review-name" data-i18n="review3_name">Екатерина</span>
                             <div class="stars">★★★★★</div>
                         </div>
-                        <div class="review-sub">Методист, конкурс «Современный урок – 2025», г. Воронеж</div>
+                        <div class="review-sub" data-i18n="review3_sub">Методист, конкурс «Современный урок – 2025», г. Воронеж</div>
                         <p data-i18n="review3">Наша боль — потерянные бумажные протоколы и конфликты с жюри: «а я так не оценивал». В СмартОценке всё подписано временной меткой и экспертной подписью. Архив за три года открывается в два клика. И главное — не надо никого учить</p>
                     </div>
                 </div>
@@ -187,7 +187,7 @@
                 <svg width="32" height="32" viewBox="0 0 24 24">
                     <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2"/>
                 </svg>
-                <span class="arrow-label">Ссылки</span>
+                <span class="arrow-label" data-i18n="links_label">Ссылки</span>
             </div>
         </section>
 
@@ -236,7 +236,7 @@
             <div class="screen-content">
                 <div class="download-container">
                     <div class="download-central-card">СмартОценка</div>
-                    <div class="download-button-card">Перейти в приложение</div>
+                    <div class="download-button-card" data-i18n="go_to_app">Перейти в приложение</div>
                 </div>
             </div>
             
@@ -245,17 +245,17 @@
                 <svg width="32" height="32" viewBox="0 0 24 24">
                     <path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2"/>
                 </svg>
-                <span class="arrow-label">Назад</span>
+                <span class="arrow-label" data-i18n="back_label">Назад</span>
             </div>
             
             <footer class="footer">
                 <div class="footer-logo">СмартОценка</div>
                 <div class="footer-nav">
-                    <a href="#" data-target="main">Главная</a>
-                    <a href="#" data-target="about">О нас</a>
-                    <a href="#" data-target="product">Продукт</a>
-                    <a href="#" data-target="reviews">Отзывы</a>
-                    <a href="#" data-target="links">Ссылки</a>
+                    <a href="#" data-target="main" data-i18n="nav_main">Главная</a>
+                    <a href="#" data-target="about" data-i18n="about_label">О нас</a>
+                    <a href="#" data-target="product" data-i18n="product_label">Продукт</a>
+                    <a href="#" data-target="reviews" data-i18n="reviews_label">Отзывы</a>
+                    <a href="#" data-target="links" data-i18n="links_label">Ссылки</a>
                 </div>
                 <div class="footer-copy">© 2026 СмартОценка</div>
             </footer>

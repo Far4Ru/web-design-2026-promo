@@ -9,6 +9,13 @@ const tariffData = {
             'Подведение итогов после финальной оценки',
             'Автоматический расчёт и оформленные результаты',
             'И многое другое: от шаблонов до архива результатов'
+        ],
+        featuresEn: [
+            'Organizer and jury personal account',
+            'Contest builder and Excel upload',
+            'Results after final evaluation',
+            'Automatic calculation and formatted results',
+            'Much more: templates to results archive'
         ]
     },
     pro: {
@@ -20,34 +27,40 @@ const tariffData = {
             'Кастомная аналитика и дашборды',
             'Интеграция с CRM и API',
             'Неограниченное количество экспертов'
+        ],
+        featuresEn: [
+            'Everything in Standard +',
+            'Priority support 24/7',
+            'Custom analytics and dashboards',
+            'CRM and API integration',
+            'Unlimited number of experts'
         ]
     }
 };
 
+let currentPlan = 'usual';
+
 function updateTariff(plan) {
+    currentPlan = plan;
     const data = tariffData[plan];
+    const lang = window.getCurrentLang ? window.getCurrentLang() : 'ru';
     const priceDisplay = document.getElementById('priceDisplay');
     const featuresList = document.getElementById('featuresList');
-    
+
     if (!priceDisplay || !featuresList) return;
-    
-    if (window.getCurrentLang && window.getCurrentLang() === 'en') {
-        priceDisplay.textContent = data.priceEn || data.price;
-    } else {
-        priceDisplay.textContent = data.price;
-    }
-    
+
+    priceDisplay.textContent = lang === 'en' ? (data.priceEn || data.price) : data.price;
+
+    const features = lang === 'en' ? (data.featuresEn || data.features) : data.features;
     const items = featuresList.querySelectorAll('li');
-    data.features.forEach((text, idx) => {
-        if (items[idx]) {
-            items[idx].textContent = text;
-        }
+    features.forEach((text, idx) => {
+        if (items[idx]) items[idx].textContent = text;
     });
 }
 
 function initTariff() {
     const tariffOptions = document.querySelectorAll('.tariff-option');
-    
+
     tariffOptions.forEach(opt => {
         opt.addEventListener('click', () => {
             tariffOptions.forEach(o => o.classList.remove('active'));
@@ -65,3 +78,4 @@ if (document.readyState === 'loading') {
 }
 
 window.updateTariff = updateTariff;
+window.updateTariffFromLang = () => updateTariff(currentPlan);
