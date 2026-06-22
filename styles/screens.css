@@ -13,9 +13,7 @@
 .about-blocks {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    max-width: 1300px;
-    margin: 0 auto;
+    gap: 20px;
     width: 100%;
 }
 
@@ -83,12 +81,11 @@
 
 .product-container {
     display: flex;
-    gap: 50px;
+    gap: 20px;
     align-items: flex-start;
-    justify-content: center;
-    max-width: 1200px;
-    margin: 0 auto;
     width: 100%;
+    max-width: 1330px;
+    margin: 0 auto;
 }
 
 .tariff-block {
@@ -96,7 +93,8 @@
     padding: 32px;
     border-radius: 28px;
     text-align: center;
-    min-width: 260px;
+    width: 385px;
+    flex-shrink: 0;
 }
 
 .tariff-block h3 {
@@ -173,9 +171,7 @@
 .reviews-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    max-width: 1400px;
-    margin: 0 auto;
+    gap: 20px;
     width: 100%;
 }
 
@@ -231,18 +227,15 @@
 
 .links-layout {
     display: flex;
-    gap: 60px;
+    gap: 20px;
     align-items: center;
-    justify-content: center;
-    max-width: 1100px;
-    margin: 0 auto;
     width: 100%;
+    max-width: 925px;
+    margin: 0 auto;
 }
 
 .form-block {
-    flex-grow: 1;
-    width: 100%;
-    max-width: 460px;
+    flex: 0 0 655px;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -296,7 +289,7 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
-    min-width: 180px;
+    flex: 1;
 }
 
 .social-item {

@@ -1,16 +1,42 @@
-/* Laptop 1440/1366 */
+/* Laptop 1440/1366 — 12 col, 80px margin, 12px gutter */
 @media (max-width: 1439px) {
     .screen {
-        padding: 100px 100px 90px;
+        padding: 100px 80px 90px;
     }
-    
+
     .main-header {
-        left: 100px;
-        right: 100px;
+        left: 80px;
+        right: 80px;
     }
-    
+
     .nav-popup {
-        right: 100px;
+        right: 80px;
+    }
+
+    .about-blocks {
+        gap: 12px;
+    }
+
+    .reviews-container {
+        gap: 12px;
+    }
+
+    .product-container {
+        gap: 12px;
+        max-width: 1065px;
+    }
+
+    .tariff-block {
+        width: 311px;
+    }
+
+    .links-layout {
+        gap: 12px;
+        max-width: 742px;
+    }
+
+    .form-block {
+        flex-basis: 526px;
     }
     
     .central-title {
@@ -22,20 +48,20 @@
     }
 }
 
-/* Tablet horizontal 1194 */
+/* Tablet horizontal 1194 — 8 col, 117px margin, 12px gutter */
 @media (max-width: 1194px) {
     .screen {
-        padding: 90px 60px 80px;
+        padding: 90px 117px 80px;
     }
-    
+
     .main-header {
-        left: 60px;
-        right: 60px;
+        left: 117px;
+        right: 117px;
         padding: 8px 18px;
     }
-    
+
     .nav-popup {
-        right: 60px;
+        right: 117px;
     }
     
     .nav-btn {
@@ -53,22 +79,35 @@
     
     .about-blocks {
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        gap: 12px;
     }
     
     .product-container {
         flex-direction: column;
         align-items: center;
+        max-width: none;
     }
-    
+
     .tariff-block {
         width: 100%;
-        max-width: 380px;
+        max-width: 353px;
+    }
+
+    .features-list {
+        width: 100%;
+    }
+
+    .links-layout {
+        max-width: 839px;
+    }
+
+    .form-block {
+        flex-basis: 596px;
     }
     
     .reviews-container {
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        gap: 12px;
     }
     
     .stat-number {
@@ -82,22 +121,22 @@
     }
 }
 
-/* Tablet vertical 834 */
+/* Tablet vertical 834 — 6 col, 57px margin, 12px gutter */
 @media (max-width: 834px) {
     .screen {
-        padding: 80px 40px 80px;
+        padding: 80px 57px 80px;
     }
-    
+
     .main-header {
-        left: 40px;
-        right: 40px;
+        left: 57px;
+        right: 57px;
         top: 20px;
         padding: 8px 16px;
     }
-    
+
     .nav-popup {
-        right: 40px;
-        left: 40px;
+        right: 57px;
+        left: 57px;
         min-width: auto;
     }
 
@@ -112,12 +151,24 @@
     .links-layout {
         flex-direction: column;
         gap: 30px;
+        max-width: none;
     }
-    
+
+    .form-block {
+        flex: none;
+        width: 100%;
+    }
+
     .social-links {
+        flex: none;
+        width: 100%;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
+    }
+
+    .tariff-block {
+        max-width: 354px;
     }
     
     .download-central-card {
@@ -132,7 +183,7 @@
     
     .about-blocks {
         grid-template-columns: 1fr;
-        gap: 16px;
+        gap: 12px;
     }
     
     .central-title {
@@ -164,22 +215,22 @@
     }
 }
 
-/* Mobile 375 */
+/* Mobile 375 — 4 col, 26px margin, 12px gutter */
 @media (max-width: 767px) {
     .screen {
-        padding: 70px 20px 70px;
+        padding: 70px 26px 70px;
     }
-    
+
     .main-header {
-        left: 16px;
-        right: 16px;
+        left: 26px;
+        right: 26px;
         top: 16px;
         padding: 6px 14px;
     }
-    
+
     .nav-popup {
-        right: 16px;
-        left: 16px;
+        right: 26px;
+        left: 26px;
     }
     
     .logo {

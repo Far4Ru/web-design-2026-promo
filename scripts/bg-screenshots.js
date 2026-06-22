@@ -49,9 +49,22 @@ function initBgScreenshots() {
         'linear-gradient(135deg,#43e97b,#764ba2)'
     ];
 
-    const MAX_TILES = 6;
     const CYCLE_MS = 10000;
     const FADE_MS = 2000;
+    const COAST_LERP = 0.025;
+    const MAX_DRAG_SPEED = 12;
+
+    let W, H, MAX_TILES;
+    let elements = [];
+    let rafId = null;
+    let imageCache = null;
+
+    function computeDimensions() {
+        const vw = window.innerWidth;
+        MAX_TILES = vw < 480 ? 3 : vw < 768 ? 4 : 6;
+        W = Math.min(280, Math.round(vw * 0.38));
+        H = Math.round(W * (180 / 280));
+    }
 
     function probeImages(callback) {
         const found = [];
@@ -63,10 +76,6 @@ function initBgScreenshots() {
         }
         probe(1);
     }
-
-    const W = 280, H = 180;
-    const COAST_LERP = 0.025;
-    const MAX_DRAG_SPEED = 12;
 
     function createTile(index, total, imageNums) {
         const el = document.createElement('div');
@@ -153,6 +162,7 @@ function initBgScreenshots() {
 
         el.addEventListener('mouseenter', function () {
             if (this.dataset.dragging === 'true') return;
+            if (this.dataset.coasting === 'true') return;
             this.dataset.paused = 'true';
             const r = parseFloat(this.dataset.rot);
             this.style.zIndex = '10';
@@ -241,14 +251,7 @@ function initBgScreenshots() {
         return el;
     }
 
-    probeImages(function (imageNums) {
-        const COUNT = imageNums.length > 0 ? Math.min(imageNums.length, MAX_TILES) : MAX_TILES;
-        const elements = [];
-
-        for (let i = 0; i < COUNT; i++) {
-            elements.push(createTile(i, COUNT, imageNums));
-        }
-
+    function startTick() {
         function tick() {
             elements.forEach(el => {
                 if (el.dataset.dragging === 'true') return;
@@ -291,16 +294,46 @@ function initBgScreenshots() {
                 el.dataset.y = y;
                 el.dataset.rot = rot;
             });
-            requestAnimationFrame(tick);
+            rafId = requestAnimationFrame(tick);
         }
+        rafId = requestAnimationFrame(tick);
+    }
+
+    function buildTiles(imageNums) {
+        if (rafId !== null) {
+            cancelAnimationFrame(rafId);
+            rafId = null;
+        }
+        elements.forEach(el => el.remove());
+        elements = [];
+
+        const COUNT = imageNums.length > 0 ? Math.min(imageNums.length, MAX_TILES) : MAX_TILES;
+        for (let i = 0; i < COUNT; i++) {
+            elements.push(createTile(i, COUNT, imageNums));
+        }
+        startTick();
+    }
+
+    probeImages(function (imageNums) {
+        imageCache = imageNums;
+        computeDimensions();
+        buildTiles(imageNums);
 
         new IntersectionObserver(entries => {
             const visible = entries[0].isIntersecting;
             container.style.opacity = visible ? '1' : '0';
             elements.forEach(el => { el.style.pointerEvents = visible ? 'auto' : 'none'; });
         }, { threshold: 0.4 }).observe(downloadScreen);
+    });
 
-        tick();
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            if (imageCache === null) return;
+            computeDimensions();
+            buildTiles(imageCache);
+        }, 300);
     });
 }
 

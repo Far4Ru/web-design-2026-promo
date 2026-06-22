@@ -6,29 +6,51 @@ function initBgNodes() {
 
     const ctx = canvas.getContext('2d');
     const mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2, radius: 150 };
-    const NODE_COUNT = 30;
+
+    let NODE_COUNT, CONNECT_DIST, mobile;
     const nodes = [];
+
+    function computeParams() {
+        mobile = window.innerWidth < 768;
+        NODE_COUNT = mobile ? 14 : 30;
+        CONNECT_DIST = mobile ? 120 : 200;
+    }
+
+    function buildNodes() {
+        nodes.length = 0;
+        for (let i = 0; i < NODE_COUNT; i++) {
+            const r = mobile ? Math.random() * 2 + 2 : Math.random() * 4 + 3;
+            nodes.push({
+                id: i,
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                vx: (Math.random() - 0.5) * 0.5,
+                vy: (Math.random() - 0.5) * 0.5,
+                baseRadius: r,
+                radius: r,
+                pulsePhase: Math.random() * Math.PI * 2
+            });
+        }
+    }
 
     function resize() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
     }
-    resize();
-    window.addEventListener('resize', resize);
 
-    for (let i = 0; i < NODE_COUNT; i++) {
-        const r = Math.random() * 4 + 3;
-        nodes.push({
-            id: i,
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            vx: (Math.random() - 0.5) * 0.5,
-            vy: (Math.random() - 0.5) * 0.5,
-            baseRadius: r,
-            radius: r,
-            pulsePhase: Math.random() * Math.PI * 2
-        });
-    }
+    computeParams();
+    resize();
+    buildNodes();
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        resize();
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            computeParams();
+            buildNodes();
+        }, 300);
+    });
 
     function updateNode(n) {
         n.x += n.vx;
@@ -81,7 +103,7 @@ function initBgNodes() {
                 const dx = nodes[i].x - nodes[j].x;
                 const dy = nodes[i].y - nodes[j].y;
                 const dist = Math.sqrt(dx * dx + dy * dy);
-                if (dist > 200) continue;
+                if (dist > CONNECT_DIST) continue;
 
                 const mx = (nodes[i].x + nodes[j].x) / 2;
                 const my = (nodes[i].y + nodes[j].y) / 2;
@@ -89,7 +111,7 @@ function initBgNodes() {
                 const mdy = mouse.y - my;
                 const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
                 const boost = mdist < mouse.radius ? (mouse.radius - mdist) / mouse.radius : 0;
-                const strength = (200 - dist) / 200;
+                const strength = (CONNECT_DIST - dist) / CONNECT_DIST;
                 const alpha = strength * 0.5 + boost * 0.5;
 
                 const hi = (nodes[i].id / NODE_COUNT) * 20 + 205;
